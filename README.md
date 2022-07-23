@@ -1,4 +1,2 @@
 # dland
-Proyecto de automatización de descarga de musica (mp3) desde YouTube.
-Es y sera un proyecto personal qeu tarbajare desde 2 ordenadores.
-The force be with u...
+Proyecto de automatización de descarga de musica (mp3) desde YouTube con una web determinada (notube.com). El tiempo estimado de descarga es 40seg.

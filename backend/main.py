@@ -27,7 +27,7 @@ def search_song():
     # Pausar el video:
     time.sleep(3)
     ubi.click (x=719, y=234)
-    # Copiar url: 
+    # Copiar url:
     keyboard.press_and_release('ctrl + l')
     time.sleep(1)
     keyboard.press_and_release('ctrl + c')
@@ -46,7 +46,7 @@ def search_song_2():
     # Pausar el video:
     time.sleep(3)
     ubi.click (x=719, y=234)
-    # Copiar url: 
+    # Copiar url:
     keyboard.press_and_release('ctrl + l')
     time.sleep(1)
     keyboard.press_and_release('ctrl + c')
@@ -62,7 +62,7 @@ def dowland():
     ubi.doubleClick(x=1347, y=516)
     # Descargar audio:
     time.sleep(10)
-    ubi.doubleClick(814, y=385) 
+    ubi.doubleClick(814, y=385)
     # Cerrar pestaña actual:
     time.sleep(3)
     keyboard.press_and_release('ctrl + w')
@@ -87,7 +87,7 @@ def ask_continue():
         messagebox.showinfo(message="Que la fuerza te acompañe...Adios", title="DOWNLANDER")
 
 
-# Run: 
+# Run:
 search_song()
 dowland()
 ask_continue()

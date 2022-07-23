@@ -3,12 +3,15 @@ from tkinter.ttk import Button, Label
 from turtle import title
 from unittest import TestCase
 
+# Esto es solo una prueba de la futura interfaz de dland
+
 # Ventana principal:
 window = tkinter.Tk()
 window.title("DOWNLANDER")
 window.geometry("400x300")
+window.iconbitmap('imagenes\\dland.ico')
 
-# Etiquetas: 
+# Etiquetas:
 etiqueta = tkinter.Label(window, text= "Type a message", font="Bahnschrift 20")
 etiqueta.pack(fill = tkinter.X)
 
