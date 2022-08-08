@@ -1,2 +1,4 @@
 # dland
-Proyecto de automatización de descarga de musica (mp3) desde YouTube con una web determinada (notube.com). El tiempo estimado de descarga es 40seg.
+Proyecto de automatización de descarga de musica con la libreria pyautogui.
+La descarga de cada musica en promedio es de 50seg.
+Si embargo no se debe usar la pantalla del ordenador mientras se ejecuta el ___.py

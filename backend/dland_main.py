@@ -4,14 +4,10 @@ import keyboard
 import pyautogui as ubi
 import time
 
-
-# Registrar brave:
-webbrowser.register('brave', None, webbrowser.BackgroundBrowser("C://Program Files/BraveSoftware/Brave-Browser/Application//brave.exe"))
-webbrowser.get('brave')
-
+# Funcion para buscar la musica y obtener url:
 def search_song():
     # Ingresa nombre de la cancion:
-    song = ubi.prompt("Escriba la cancion:  ", "DOWNLANDER")
+    song = ubi.prompt("Escriba la cancion:  ", "DLAND")
     str(song)
     # Abrir youtube:
     webbrowser.open('https://www.youtube.com')
@@ -32,9 +28,10 @@ def search_song():
     time.sleep(1)
     keyboard.press_and_release('ctrl + c')
 
+# Funcion para buscar la musica y obtener url (secundaria de ciclo repetitivo):
 def search_song_2():
     # Ingresa nombre de la cancion:
-    song = ubi.prompt("Escriba la cancion:  ", "DOWNLANDER")
+    song = ubi.prompt("Escriba la cancion:  ", "DLAND")
     str(song)
     # Buscar cancion:
     ubi.tripleClick (x=659, y=130)
@@ -51,6 +48,7 @@ def search_song_2():
     time.sleep(1)
     keyboard.press_and_release('ctrl + c')
 
+# Funcion para descar la musica don ayuda del url:
 def dowland():
     # Abrir notube:
     webbrowser.open_new_tab('https://notube.site/es/youtube-app-v19')
@@ -67,15 +65,14 @@ def dowland():
     time.sleep(3)
     keyboard.press_and_release('ctrl + w')
     time.sleep(8)
-    messagebox.showinfo(message="LISTO, DESCARGA COMPLETA", title="DOWNLANDER")
+    messagebox.showinfo(message="LISTO, DESCARGA COMPLETA", title="DLAND")
 
-# Botones:
+# Botones para ventana de si repetir o no:
 bot_si = "SI"
 bot_no = "NO"
-
 def ask_continue():
     # pregunta para continuar:
-    caja_continue = ubi.confirm("¿Desea descargar otra musica?","DOWNLANDER", [bot_si,bot_no])
+    caja_continue = ubi.confirm("¿Desea descargar otra musica?","DLAND", [bot_si,bot_no])
 
     # Tomar deciciones en base al boton seleccionado:
     if caja_continue == bot_si:
@@ -84,8 +81,11 @@ def ask_continue():
         ask_continue()
 
     elif caja_continue == bot_no:
-        messagebox.showinfo(message="Que la fuerza te acompañe...Adios", title="DOWNLANDER")
+        message_close()
 
+#Funcion de adios:
+def message_close():
+    messagebox.showinfo(message="Que la fuerza te acompañe...\nAdios", title="DLAND")
 
 # Run:
 search_song()
