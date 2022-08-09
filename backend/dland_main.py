@@ -1,3 +1,4 @@
+from fileinput import close
 from tkinter import messagebox
 import webbrowser
 import keyboard
@@ -86,8 +87,3 @@ def ask_continue():
 #Funcion de adios:
 def message_close():
     messagebox.showinfo(message="Que la fuerza te acompañe...\nAdios", title="DLAND")
-
-# Run:
-search_song()
-dowland()
-ask_continue()
