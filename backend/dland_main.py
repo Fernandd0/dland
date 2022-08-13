@@ -1,14 +1,13 @@
-from fileinput import close
 from tkinter import messagebox
 import webbrowser
 import keyboard
 import pyautogui as ubi
 import time
 
+
 # Funcion para buscar la musica y obtener url:
 def search_song():
-    # Ingresa nombre de la cancion:
-    song = ubi.prompt("Escriba la cancion:  ", "DLAND")
+    song = ubi.prompt("Escriba la cancion:  ", "DLAND", ) #ingresa nombre de la cancion.
     str(song)
     # Abrir youtube:
     webbrowser.open('https://www.youtube.com')
@@ -49,7 +48,7 @@ def search_song_2():
     time.sleep(1)
     keyboard.press_and_release('ctrl + c')
 
-# Funcion para descar la musica don ayuda del url:
+# Funcion para descargar la musica don ayuda del url:
 def dowland():
     # Abrir notube:
     webbrowser.open_new_tab('https://notube.site/es/youtube-app-v19')
@@ -71,6 +70,7 @@ def dowland():
 # Botones para ventana de si repetir o no:
 bot_si = "SI"
 bot_no = "NO"
+# Funcion para preguntar si continuar descargando ams canciones:
 def ask_continue():
     # pregunta para continuar:
     caja_continue = ubi.confirm("¿Desea descargar otra musica?","DLAND", [bot_si,bot_no])
@@ -84,6 +84,6 @@ def ask_continue():
     elif caja_continue == bot_no:
         message_close()
 
-#Funcion de adios:
-def message_close():
+#Funcion de adios y fin del programa:
+def message_close ():
     messagebox.showinfo(message="Que la fuerza te acompañe...\nAdios", title="DLAND")

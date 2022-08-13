@@ -1,46 +1,79 @@
-from distutils.cmd import Command
-from re import search
-from tkinter import _Padding, font, ttk
-from tkinter import *
-from turtle import color
-
-from backend import dland_main
+from tkinter import Tk, font, ttk, messagebox, Label, Button
 
 
-#Configuracion de atributos de la ventana home:
-window_home = Tk() #crea ventana
-window_home.title ("DLAND") #titulo de la ventana
-window_home.geometry ("1000x500") #medidas de la ventana
-window_home.config(bg = "#11223c") #fondo de la ventana
-window_home.iconbitmap("img/dland_icono.ico") #icono de la ventana
+color_1="#11223c" # color principal
+
+# Creacion de la ventana principal:
+window_home = Tk() #crea ventana principal.
+window_home.title ("DLAND") #titulo de la ventana.
+window_home.resizable(width=False,height=False) #evita redimencionar la ventana.
+window_home.iconbitmap("img/dland_icono.ico") #icono de la ventana.
+window_home.config(bg=color_1) #color de fondo de la ventana
+# Proceso para obtener medidas de la pantalla y siempre posicionar la ventana al centro:
+ancho_ventana = 1000 #medida seleccionada de ancho.
+alto_ventana = 500  #medida seleccionada de altura.
+x_ventana = window_home.winfo_screenwidth() // 2 - ancho_ventana // 2 #obtener posicion de ancho al centro.
+y_ventana = window_home.winfo_screenheight() // 2 - alto_ventana // 2 #obtener posicion de altura al centro.
+posicion = str(ancho_ventana) + "x" + str(alto_ventana) + "+" + str(x_ventana) + "+" + str(y_ventana) #concatenacion de los valores para pantalla.
+window_home.geometry (posicion) #posicionamiento de la ventana.
+
+
+#Titulo y texto de blienvenida:
+welcome = Label(
+    window_home,
+    text ="\nHey, type a song to downland: ",
+    font = ("Mono", 20, "bold"),
+    bg=color_1, fg="white"
+).place(x=300,y=10)
+
+text_or = Label(
+    window_home,
+    text ="or",
+    font = ("Mono", 12, "bold"),
+    bg=color_1, fg="gray"
+).place(x=470,y=270)
+
+#Input text
+input_song = ttk.Entry(
+    window_home,
+    font=font.Font(family="Mono", size=20)
+).place(x=250, y=120,width=500, height=35,)
 
 #Botones:
-continuar_boton = ttk.Style()
-continuar_boton.configure(
-    "continuar_boton.TButton",
-    foreground= "11223c",
-    background= "fef1db",
-    padding=10,
-)
-continuar_boton = ttk.Button(text="Continuar", width=30, command=dland_main.search_song)
-continuar_boton.place(x=220, y=300)
+continuar_boton = Button(
+    window_home,
+    text="CONTINUE",
+    height=3,width=20,
+    cursor="hand2",
+    bg="white", fg=color_1,
+    font=("Mono",10,"bold"),
+    command=()
+).place(x=300, y=200)
+
+def close_windows ():
+    window_home.destroy() #Cerrar la ventana
+
+cancelar_boton = Button(
+    window_home,
+    text="EXIT",
+    height=3,width=20,
+    cursor="hand2",
+    bg="white", fg=color_1,
+    font=("Mono",10,"bold"),
+    command=()
+).place(x=500, y=200)
+
+open_doc_boton = Button(
+    window_home,
+    text="MAKE A LIST",
+    cursor="hand2",
+    bg="white", fg=color_1,
+    font=("Mono",10,"bold"),
+    height=3,width=20,
+).place(x=400, y=300)
 
 
-cancelar_boton = ttk.Button(text="Cancelar", width=30, command=dland_main.message_close)
-cancelar_boton.place(x=520, y=300)
+# Robot animado:
 
-
-
-s = ttk.Style()
-s.configure(
-    "MyButton.TButton",
-    foreground="#ff0000",
-    background="#000000",
-    padding=20,
-    font=("Times", 12),
-    anchor="w"
-)
-boton = ttk.Button(text="¡Hola, mundo!", style="MyButton.TButton")
-boton.place(x=50, y=50)
-
+#Run:
 window_home.mainloop()
